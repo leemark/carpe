@@ -5,6 +5,13 @@ body{
     text-align: center;
     font-family: 'Lato', sans-serif;
 }
-button{
-    font-size: 5em;
+.button{
+    font-size: 2em;
+    display: inline-block;
+    width: 200px;
+    padding: 8px;
+    border: 1px solid rgba(0,255,0,1);
+    text-align: center;
+    outline: none;
+    text-decoration: none;
 }
