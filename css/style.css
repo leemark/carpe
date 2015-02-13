@@ -6,7 +6,9 @@ body{
     font-family: 'Lato', sans-serif;
 }
 .button{
-    font-size: 2em;
+    font-size: 1.6em;
+    font-weight: 900;
+    margin: 15px;
     display: inline-block;
     width: 200px;
     padding: 8px;
