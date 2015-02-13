@@ -6,8 +6,12 @@ body{
     font-family: 'Lato', sans-serif;
     padding-top: 20vh;
 }
+h1{
+    font-weight: 100;
+    font-size: 4em;
+}
 .button{
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 400;
     margin: 35px;
     display: inline-block;
