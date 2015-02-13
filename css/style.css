@@ -4,7 +4,6 @@ body{
     font-size: 1.5em;
     text-align: center;
     font-family: 'Lato', sans-serif;
-    padding-top: 5vh;
 }
 h1{
     font-weight: 100;
@@ -13,7 +12,7 @@ h1{
 .button{
     font-size: 1.3em;
     font-weight: 300;
-    margin: 35px;
+    margin: 45px;
     display: inline-block;
     width: 300px;
     padding: 4px 8px 8px 8px;
