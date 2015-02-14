@@ -5,8 +5,9 @@
         month = document.getElementById('month'),
         year = document.getElementById('year');
     
-    go.addEventListener('click', getInfo, false);
+    
     getInfo = function(){
         console.log(year);
     };
+    go.addEventListener('click', getInfo, false);
 }());
