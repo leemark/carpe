@@ -33,16 +33,16 @@ h1{
                 color 0.3s ease-in;
 }
 .button span {
-    animation: blink 1s alternate infinite;
-    -webkit-animation: blink 1s alternate infinite;
+    animation: blink .5s alternate infinite;
+    -webkit-animation: blink .5s alternate infinite;
 }
 @keyframes blink {
     to {
-        opacity: 0;
+        opacity: .3;
     }
 }
 @-webkit-keyframes blink {
     to {
-        opacity: 0;
+        opacity: .3;
     }
 }
