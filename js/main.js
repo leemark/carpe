@@ -1,5 +1,5 @@
 (function(){
-    var getInfo,
+    var getInfo, showResults,
         go = document.getElementById('go'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
@@ -16,9 +16,13 @@
         s.type = 'text/javascript';
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
         window.getTime = function(data){
-            console.dir(data);
+            showResults(data);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
     };
+    showResults = function(data){
+        console.log('hi');
+        console.dir(data);
+    }
     go.addEventListener('click', getInfo, false);
 }());
