@@ -1,5 +1,5 @@
 (function(){
-    var getInfo, getTime,
+    var getInfo,
         go = document.getElementById('go'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
@@ -15,7 +15,7 @@
         var s = document.createElement('script');
         s.type = 'text/javascript';
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
-        getTime = function(data){
+        window.getTime = function(data){
             console.dir(data);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
