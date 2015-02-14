@@ -11,6 +11,7 @@
         gender = genderEl.options[genderEl.selectedIndex].value;
     
     getInfo = function(){
+        go.innerHTML('<span>...checking...</span>');
         //console.log(day + ':' + month + ':' + year + ':' + gender);
         var s = document.createElement('script');
         s.type = 'text/javascript';

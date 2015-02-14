@@ -32,3 +32,17 @@ h1{
     transition: background-color 0.3s ease-in,
                 color 0.3s ease-in;
 }
+.button span {
+    animation: blink 1s steps(5, start) infinite;
+    -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
