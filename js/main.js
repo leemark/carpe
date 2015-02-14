@@ -14,11 +14,11 @@
         //console.log(day + ':' + month + ':' + year + ':' + gender);
         var s = document.createElement('script');
         s.type = 'text/javascript';
-        s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year; 
+        s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
+        getTime = function(data){
+            console.dir(data);
+        };
         document.getElementsByTagName('head')[0].appendChild(s);
-    };
-    getTime = function(data){
-        console.dir(data);
     };
     go.addEventListener('click', getInfo, false);
 }());
