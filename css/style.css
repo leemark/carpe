@@ -12,7 +12,8 @@ h1{
 #results {
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
-    font-size: 1.6em;
+    font-size: 4em;
+    opacity: .8;
 }
 .hidden {
     display: none;
