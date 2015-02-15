@@ -35,7 +35,7 @@
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
-            results.innerHTML = secondsLeft - (timeSince * 1000);
+            results.innerHTML = secondsLeft - (timeSince / 1000);
            // console.log(timeSince);
             // console.log(startTime);
             // console.log(secondsLeft);
