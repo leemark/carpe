@@ -2,7 +2,7 @@
     var getInfo, showResults,
         initform = document.getElementById('initform'),
         resultsContainer = document.getElementById('results'),
-        result = resultsContainer.querySelector('#results>h2'),
+        results = resultsContainer.querySelector('#results>h2'),
         go = document.getElementById('go'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
