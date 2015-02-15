@@ -24,10 +24,20 @@
         document.getElementsByTagName('head')[0].appendChild(s);
     };
     showResults = function(data){
+        var secondsLeft = data.secondsLeft,
+            startDate = new Date(),
+            startTime = startDate.getTime();
         initform.classList.add('hidden');
         results.classList.remove('hidden');
-        results.innerHTML = data;
+        results.innerHTML = secondsLeft;
         console.dir(data);
-    }
+        var update = function(){
+            var now = new Date();
+            var timeSince = now.getTime() - startTime;
+            results.innerHTML = secondsLeft - (timeSince * 1000);
+            requestAnimationFrame(update);
+        };
+        update();
+    };
     go.addEventListener('click', getInfo, false);
 }());
