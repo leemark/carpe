@@ -9,10 +9,10 @@ h1{
     font-weight: 100;
     font-size: 5em;
 }
-#results {
+#results h2{
     font-family: 'Inconsolata', monospace;
     font-weight: 700;
-    font-size: 4em;
+    font-size: 6em;
     opacity: .8;
 }
 .hidden {

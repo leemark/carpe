@@ -1,7 +1,8 @@
 (function(){
     var getInfo, showResults,
         initform = document.getElementById('initform'),
-        results = document.getElementById('results'),
+        resultsContainer = document.getElementById('results'),
+        result = resultsContainer.querySelector('#results>h2'),
         go = document.getElementById('go'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
@@ -28,7 +29,7 @@
             startDate = new Date(),
             startTime = startDate.getTime();
         initform.classList.add('hidden');
-        results.classList.remove('hidden');
+        resultsContainer.classList.remove('hidden');
         results.innerHTML = Math.round(secondsLeft);
         console.log(secondsLeft);
         console.dir(data);
