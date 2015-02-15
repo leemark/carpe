@@ -29,16 +29,13 @@
             startTime = startDate.getTime();
         initform.classList.add('hidden');
         results.classList.remove('hidden');
-        results.innerHTML = secondsLeft;
+        results.innerHTML = Math.round(secondsLeft);
         console.log(secondsLeft);
         console.dir(data);
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
-            results.innerHTML = secondsLeft - (timeSince / 1000);
-           // console.log(timeSince);
-            // console.log(startTime);
-            // console.log(secondsLeft);
+            results.innerHTML = Math.round(secondsLeft - (timeSince / 1000));
             requestAnimationFrame(update);
         };
         update();
