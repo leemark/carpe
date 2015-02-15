@@ -27,6 +27,7 @@
         initform.classList.add('hidden');
         results.classList.remove('hidden');
         results.innerHTML = data;
+        console.dir(data);
     }
     go.addEventListener('click', getInfo, false);
 }());
