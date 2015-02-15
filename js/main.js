@@ -24,7 +24,7 @@
         document.getElementsByTagName('head')[0].appendChild(s);
     };
     showResults = function(data){
-        var secondsLeft = data.secondsLeft,
+        var secondsLeft = data.data.secondsLeft,
             startDate = new Date(),
             startTime = startDate.getTime();
         initform.classList.add('hidden');
