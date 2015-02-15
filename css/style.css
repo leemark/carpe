@@ -9,6 +9,9 @@ h1{
     font-weight: 100;
     font-size: 5em;
 }
+.hidden {
+    display: none;
+}   
 .button{
     font-size: 1.3em;
     font-weight: 300;
@@ -33,16 +36,16 @@ h1{
                 color 0.3s ease-in;
 }
 .button span {
-    animation: blink .5s alternate infinite;
-    -webkit-animation: blink .5s alternate infinite;
+    animation: blink .3s alternate infinite;
+    -webkit-animation: blink .3s alternate infinite;
 }
 @keyframes blink {
     to {
-        opacity: .3;
+        opacity: .5;
     }
 }
 @-webkit-keyframes blink {
     to {
-        opacity: .3;
+        opacity: .5;
     }
 }

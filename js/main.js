@@ -1,5 +1,7 @@
 (function(){
     var getInfo, showResults,
+        initform = document.getElementById('initform'),
+        results = document.getElementById('results'),
         go = document.getElementById('go'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
@@ -22,8 +24,9 @@
         document.getElementsByTagName('head')[0].appendChild(s);
     };
     showResults = function(data){
-        console.log('hi');
-        console.dir(data);
+        initform.classList.add('hidden');
+        results.classList.remove('hidden');
+        results.innerHTML = data;
     }
     go.addEventListener('click', getInfo, false);
 }());
