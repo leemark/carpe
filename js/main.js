@@ -27,7 +27,9 @@
     showResults = function(data){
         var secondsLeft = data.data.secondsLeft,
             startDate = new Date(),
-            startTime = startDate.getTime();
+            startTime = startDate.getTime(),
+            expiry = startTime + secondsLeft;
+        localStorage.setItem('expiry', expiry);
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         results.innerHTML = Math.round(secondsLeft).toLocaleString();
