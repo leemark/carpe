@@ -35,7 +35,7 @@
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         //results.innerHTML = Math.round(secondsLeft).toLocaleString();
-        console.log(secLeft);
+        //console.log(secLeft);
         var update = function(){
             var now = new Date();
             var timeSince = (now.getTime() / 1000) - startTime;
@@ -53,8 +53,8 @@
     if(expiry){
         var now = new Date(),
             startTime = now.getTime() * 1000;
-        console.log('exp: ' + expiry);
-        console.log('st2: ' + startTime);
+        //console.log('exp: ' + expiry);
+        //console.log('st2: ' + startTime);
         secLeft = expiry - startTime;
         showResults(startTime, secLeft);
     }else{
