@@ -25,11 +25,11 @@
             startTime = startDate.getTime(),
             expiry = startTime + secondsLeft;
             localStorage.setItem('expiry', expiry);
-            showResults(secondsLeft);
+            showResults(startTime, secondsLeft);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
     };
-    showResults = function(secondsLeft){
+    showResults = function(startTime, secondsLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         results.innerHTML = Math.round(secondsLeft).toLocaleString();
