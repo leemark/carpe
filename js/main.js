@@ -36,7 +36,6 @@
         resultsContainer.classList.remove('hidden');
         //results.innerHTML = Math.round(secondsLeft).toLocaleString();
         console.log(msecLeft);
-        console.dir(data);
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
