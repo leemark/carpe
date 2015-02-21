@@ -52,10 +52,10 @@
     };
     
     if(expiry){
-        var startDate = new Date(),
-            startTime = startDate.getTime();
+        var startDate2 = new Date(),
+            startTime2 = startDate2.getTime();
         console.log(expiry);
-        console.log(startTime);
+        console.log(startTime2);
         secondsLeft = expiry - startTime;
         showResults(startTime, secondsLeft);
     }else{
