@@ -23,7 +23,7 @@
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
         window.getTime = function(data){
             var startDate = new Date(),
-            startTime = startDate.getTime() * 1000;
+            startTime = startDate.getTime() / 1000;
             secLeft = data.data.secondsLeft;
             expiry = startTime + secLeft;
             localStorage.setItem('expiry', expiry);
