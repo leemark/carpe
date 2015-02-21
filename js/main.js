@@ -1,5 +1,5 @@
 (function(){
-    var getInfo, showResults, clearExpiry, secondsLeft,
+    var getInfo, showResults, clearExpiry, secLeft,
         initform = document.getElementById('initform'),
         resultsContainer = document.getElementById('results'),
         results = resultsContainer.querySelector('#results>h2'),
@@ -23,23 +23,23 @@
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
         window.getTime = function(data){
             var startDate = new Date(),
-            startTime = startDate.getTime();
-            msecLeft = data.data.secondsLeft * 1000;
-            expiry = startTime + msecLeft;
+            startTime = startDate.getTime() * 1000;
+            secLeft = data.data.secondsLeft;
+            expiry = startTime + secLeft;
             localStorage.setItem('expiry', expiry);
-            showResults(startTime, msecLeft);
+            showResults(startTime, secLeft);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
     };
-    showResults = function(startTime, msecLeft){
+    showResults = function(startTime, secLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         //results.innerHTML = Math.round(secondsLeft).toLocaleString();
-        console.log(msecLeft);
+        console.log(secLeft);
         var update = function(){
             var now = new Date();
-            var timeSince = now.getTime() - startTime;
-            results.innerHTML = Math.round(msecLeft - timeSince).toLocaleString();
+            var timeSince = (now.getTime() * 1000) - startTime;
+            results.innerHTML = Math.round(secLeft - timeSince).toLocaleString();
             requestAnimationFrame(update);
         };
         update();
@@ -52,11 +52,11 @@
     
     if(expiry){
         var now = new Date(),
-            startTime = now.getTime();
+            startTime = now.getTime() * 1000;
         console.log('exp: ' + expiry);
         console.log('st2: ' + startTime);
-        msecLeft = expiry - startTime;
-        showResults(startTime, msecLeft);
+        secLeft = expiry - startTime;
+        showResults(startTime, secLeft);
     }else{
         
     }
