@@ -39,7 +39,7 @@
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
-            results.innerHTML = Math.round((msecLeft - timeSince) *   1000).toLocaleString();
+            results.innerHTML = Math.round((msecLeft - timeSince) /   1000).toLocaleString();
             requestAnimationFrame(update);
         };
         update();
