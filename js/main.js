@@ -38,7 +38,7 @@
         console.log(secLeft);
         var update = function(){
             var now = new Date();
-            var timeSince = (now.getTime() * 1000) - startTime;
+            var timeSince = (now.getTime() / 1000) - startTime;
             results.innerHTML = Math.round(secLeft - timeSince).toLocaleString();
             requestAnimationFrame(update);
         };
