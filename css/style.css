@@ -16,7 +16,11 @@ h1{
 }
 #reset img{
     cursor: pointer;
-    margin-top: 2em;
+    margin-top: 1.5em;
+    opacity: .5;
+}
+#reset img:hover{
+    opacity: 1;   
 }
 .hidden {
     display: none;
