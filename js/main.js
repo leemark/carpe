@@ -1,5 +1,5 @@
 (function(){
-    var getInfo, showResults,
+    var getInfo, showResults, secondsLeft,
         initform = document.getElementById('initform'),
         resultsContainer = document.getElementById('results'),
         results = resultsContainer.querySelector('#results>h2'),
@@ -11,7 +11,8 @@
         yearEl = document.getElementById('year'),
         year = yearEl.options[yearEl.selectedIndex].value,
         genderEl = document.getElementById('gender'),
-        gender = genderEl.options[genderEl.selectedIndex].value;
+        gender = genderEl.options[genderEl.selectedIndex].value,
+        expiry = localStorage.getItem('expiry');
     
     getInfo = function(){
         go.innerHTML = '<span>...checking...</span>';
@@ -20,9 +21,9 @@
         s.type = 'text/javascript';
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
         window.getTime = function(data){
-            var secondsLeft = data.data.secondsLeft,
-            startDate = new Date(),
-            startTime = startDate.getTime(),
+            var startDate = new Date(),
+            startTime = startDate.getTime();
+            secondsLeft = data.data.secondsLeft;
             expiry = startTime + secondsLeft;
             localStorage.setItem('expiry', expiry);
             showResults(startTime, secondsLeft);
@@ -44,4 +45,12 @@
         update();
     };
     go.addEventListener('click', getInfo, false);
+    if(expiry){
+        var startDate = new Date(),
+            startTime = startDate.getTime();
+        secondsLeft = expiry - startTime;
+        showResults(startTime, secondsLeft);
+    }else{
+        
+    }
 }());
