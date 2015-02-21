@@ -53,7 +53,7 @@
     
     if(expiry){
         var now = new Date(),
-            startTime2 = now.getTime();
+            startTime2 = now.getTime()/1000;
         console.log('exp: ' + expiry);
         console.log('st2: ' + startTime2);
         secondsLeft = expiry - startTime2;
