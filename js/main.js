@@ -24,23 +24,23 @@
         window.getTime = function(data){
             var startDate = new Date(),
             startTime = startDate.getTime();
-            secondsLeft = data.data.secondsLeft;
-            expiry = (startTime*1000) + secondsLeft;
+            msecLeft = data.data.secondsLeft * 1000;
+            expiry = startTime + msecLeft;
             localStorage.setItem('expiry', expiry);
-            showResults(startTime, secondsLeft);
+            showResults(startTime, msecLeft);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
     };
-    showResults = function(startTime, secondsLeft){
+    showResults = function(startTime, msecLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         //results.innerHTML = Math.round(secondsLeft).toLocaleString();
-        // console.log(secondsLeft);
-        // console.dir(data);
+        console.log(msecLeft);
+        console.dir(data);
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
-            results.innerHTML = Math.round(secondsLeft - (timeSince / 1000)).toLocaleString();
+            results.innerHTML = Math.round((msecLeft - timeSince) *   1000).toLocaleString();
             requestAnimationFrame(update);
         };
         update();
@@ -53,11 +53,11 @@
     
     if(expiry){
         var now = new Date(),
-            startTime2 = now.getTime();
+            startTime = now.getTime();
         console.log('exp: ' + expiry);
-        console.log('st2: ' + startTime2);
-        secondsLeft = expiry - startTime2;
-        showResults(startTime2, secondsLeft);
+        console.log('st2: ' + startTime);
+        msecLeft = expiry - startTime;
+        showResults(startTime, msecLeft);
     }else{
         
     }
