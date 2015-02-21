@@ -1,9 +1,10 @@
 (function(){
-    var getInfo, showResults, secondsLeft,
+    var getInfo, showResults, clearExpiry, secondsLeft,
         initform = document.getElementById('initform'),
         resultsContainer = document.getElementById('results'),
         results = resultsContainer.querySelector('#results>h2'),
         go = document.getElementById('go'),
+        reset = document.getElementById('reset'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
         monthEl = document.getElementById('month'),
@@ -44,7 +45,10 @@
         };
         update();
     };
-    go.addEventListener('click', getInfo, false);
+    clearExpiry = function(){
+       localStorage.removeItem(expiry); 
+    };
+    
     if(expiry){
         var startDate = new Date(),
             startTime = startDate.getTime();
@@ -53,4 +57,7 @@
     }else{
         
     }
+    
+    go.addEventListener('click', getInfo, false);
+    reset.addEventListener('click', clearExpiry, false);
 }());
