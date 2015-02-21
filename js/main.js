@@ -20,21 +20,21 @@
         s.type = 'text/javascript';
         s.src = 'http://marksdigital.com/carpe/?gen=' + gender + '&dob=' + month + day + year;
         window.getTime = function(data){
-            showResults(data);
-        };
-        document.getElementsByTagName('head')[0].appendChild(s);
-    };
-    showResults = function(data){
-        var secondsLeft = data.data.secondsLeft,
+            var secondsLeft = data.data.secondsLeft,
             startDate = new Date(),
             startTime = startDate.getTime(),
             expiry = startTime + secondsLeft;
-        localStorage.setItem('expiry', expiry);
+            localStorage.setItem('expiry', expiry);
+            showResults(secondsLeft);
+        };
+        document.getElementsByTagName('head')[0].appendChild(s);
+    };
+    showResults = function(secondsLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
         results.innerHTML = Math.round(secondsLeft).toLocaleString();
-        console.log(secondsLeft);
-        console.dir(data);
+        // console.log(secondsLeft);
+        // console.dir(data);
         var update = function(){
             var now = new Date();
             var timeSince = now.getTime() - startTime;
