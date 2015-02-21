@@ -25,7 +25,7 @@
             var startDate = new Date(),
             startTime = startDate.getTime();
             secondsLeft = data.data.secondsLeft;
-            expiry = startTime + secondsLeft;
+            expiry = (startTime*1000) + secondsLeft;
             localStorage.setItem('expiry', expiry);
             showResults(startTime, secondsLeft);
         };
@@ -53,7 +53,7 @@
     
     if(expiry){
         var now = new Date(),
-            startTime2 = now.getTime()/1000;
+            startTime2 = now.getTime();
         console.log('exp: ' + expiry);
         console.log('st2: ' + startTime2);
         secondsLeft = expiry - startTime2;
