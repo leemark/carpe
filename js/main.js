@@ -33,7 +33,7 @@
     showResults = function(startTime, secondsLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
-        results.innerHTML = Math.round(secondsLeft).toLocaleString();
+        //results.innerHTML = Math.round(secondsLeft).toLocaleString();
         // console.log(secondsLeft);
         // console.dir(data);
         var update = function(){
