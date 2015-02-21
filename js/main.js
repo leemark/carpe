@@ -52,8 +52,8 @@
     };
     
     if(expiry){
-        var startDate2 = new Date(),
-            startTime2 = startDate2.getTime();
+        var now = new Date(),
+            startTime2 = now.getTime();
         console.log('exp: ' + expiry);
         console.log('st2: ' + startTime2);
         secondsLeft = expiry - startTime2;
