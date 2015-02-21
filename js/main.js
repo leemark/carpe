@@ -54,9 +54,9 @@
     if(expiry){
         var startDate2 = new Date(),
             startTime2 = startDate2.getTime();
-        console.log(expiry);
-        console.log(startTime2);
-        secondsLeft = expiry - startTime;
+        console.log('exp: ' + expiry);
+        console.log('st2' + startTime2);
+        secondsLeft = expiry - startTime2;
         showResults(startTime, secondsLeft);
     }else{
         
