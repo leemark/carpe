@@ -46,7 +46,9 @@
         update();
     };
     clearExpiry = function(){
-       localStorage.removeItem(expiry); 
+       localStorage.removeItem(expiry);
+        initform.classList.remove('hidden');
+        resultsContainer.classList.add('hidden');
     };
     
     if(expiry){
