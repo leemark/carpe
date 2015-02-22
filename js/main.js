@@ -16,7 +16,8 @@
         expiry = localStorage.getItem('expiry');
     
     getInfo = function(){
-        go.innerHTML = '<span>...checking...</span>';
+        //go.innerHTML = '<span>...checking...</span>';
+        go.classList.remove('pre');
         //console.log(day + ':' + month + ':' + year + ':' + gender);
         var s = document.createElement('script');
         s.type = 'text/javascript';
@@ -34,6 +35,7 @@
     showResults = function(startTime, secLeft){
         initform.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
+        go.classList.add('pre');
         //results.innerHTML = Math.round(secondsLeft).toLocaleString();
         //console.log(secLeft);
         var update = function(){
