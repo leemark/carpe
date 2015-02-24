@@ -1,9 +1,10 @@
 (function(){
-    var getInfo, showResults, clearExpiry, secLeft,
+    var getInfo, showResults, clearExpiry, secLeft, 
         initform = document.getElementById('initform'),
         resultsContainer = document.getElementById('results'),
         results = resultsContainer.querySelector('#results>h2'),
         go = document.getElementById('go'),
+        formatEl = document.getElementById('format'),
         reset = document.getElementById('reset'),
         dayEl = document.getElementById('day'),
         day = dayEl.options[dayEl.selectedIndex].value,
@@ -13,7 +14,8 @@
         year = yearEl.options[yearEl.selectedIndex].value,
         genderEl = document.getElementById('gender'),
         gender = genderEl.options[genderEl.selectedIndex].value,
-        expiry = localStorage.getItem('expiry');
+        expiry = localStorage.getItem('expiry'),
+        format = localStorage.getItem('format');
     
     getInfo = function(){
         //go.innerHTML = '<span>...checking...</span>';
@@ -27,7 +29,9 @@
             startTime = startDate.getTime() / 1000;
             secLeft = data.data.secondsLeft;
             expiry = startTime + secLeft;
+            format = format || 's';
             localStorage.setItem('expiry', expiry);
+            localStorage.setItem('format', format);
             showResults(startTime, secLeft);
         };
         document.getElementsByTagName('head')[0].appendChild(s);
@@ -41,13 +45,14 @@
         var update = function(){
             var now = new Date();
             var timeSince = (now.getTime() / 1000) - startTime;
+            console.log(format);
             results.innerHTML = Math.round(secLeft - timeSince).toLocaleString();
             requestAnimationFrame(update);
         };
         update();
     };
     clearExpiry = function(){
-       localStorage.removeItem(expiry);
+        localStorage.removeItem(expiry);
         initform.classList.remove('hidden');
         resultsContainer.classList.add('hidden');
     };
@@ -62,7 +67,13 @@
     }else{
         
     }
-    
+    var formatOptions = formatEl.querySelectorAll('span');
+    Array.prototype.forEach.call(formatOptions, function(fo){
+        fo.addEventListener('click', function(){
+            format = fo.dataset.format;
+            localStorage.setItem('format', format);
+        },false);
+    });
     go.addEventListener('click', getInfo, false);
     reset.addEventListener('click', clearExpiry, false);
 }());
