@@ -9,6 +9,26 @@ h1{
     font-weight: 100;
     font-size: 5em;
 }
+#format{
+ margin: 3em 0 1em 0;   
+}
+#format span{
+    display: inline-block;
+    cursor: pointer;
+    width: 1.5em;
+    padding-bottom: .2em;
+    margin: .2em;
+    border: 1px solid rgba(0,255,0,.1);
+    border-radius: 5px;
+    font-weight: 100;
+    font-size: 1.3em;
+}
+#format span:hover{
+    background: rgba(0,255,0,.1);   
+}
+#results{
+ margin-top: 5em;   
+}
 #results h2{
     font-weight: 700;
     font-size: 3.5em;
